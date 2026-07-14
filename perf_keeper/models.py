@@ -177,6 +177,7 @@ class CommitModel(BaseModel):
     sha: str = Field(min_length=1)
     message: str = Field(min_length=1)
     pr_key: str = Field(min_length=1)
+    committed_at: datetime | None = None
     file_keys: list[str] = Field(default_factory=list)
     total_additions: int = Field(default=0, ge=0)
     total_deletions: int = Field(default=0, ge=0)
