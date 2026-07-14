@@ -184,6 +184,7 @@ class CommitModel(BaseModel):
     passed_heuristics: bool = True
     triage_score: int = Field(default=0, ge=0, le=100)
     needs_deep_analysis: bool = False
+    confidence: ConfidenceLevel | None = None
 
 
 class PRModel(BaseModel):
