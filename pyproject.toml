@@ -13,6 +13,7 @@ dependencies = [
     "fastapi>=0.115.0",
     "uvicorn>=0.34.0",
     "pyyaml>=6.0",
+    "py-commons",
 ]
 
 [project.scripts]
@@ -29,6 +30,14 @@ dev = [
 [tool.setuptools.packages.find]
 include = ["perf_keeper*"]
 
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["perf_keeper/commit_triage/tests"]
+
+[tool.uv.sources]
+py-commons = { path = "../py-commons" }
+
 [build-system]
 requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
+
